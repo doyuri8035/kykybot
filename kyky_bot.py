@@ -1,5 +1,7 @@
 import discord
 from discord.ext import commands
+import os
+
 
 # 인텐트 설정
 intents = discord.Intents.default()
@@ -76,5 +78,7 @@ async def delete_user_info(ctx, member: discord.Member):
     else:
         await ctx.send(f"{member.mention}님의 정보를 찾을 수 없습니다.")
 
+access_token = os.environ["BOT_TOKEN"]
+
 # 봇 실행
-bot.run('MTI3MDYyNDg3MjU5NDE0NTM1MA.GMEO7m.bFYO6BKaQZn7etPKyMw_0V84sI7RfT6sw3O_TQ')
+bot.run(access_token)
